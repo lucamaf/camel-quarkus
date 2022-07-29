@@ -210,7 +210,7 @@ class GrpcTest {
                 .statusCode(204);
     }
 
-    @Test
+    @Disabled("https://github.com/apache/camel-quarkus/issues/3947")
     public void tlsConsumer() throws Exception {
         Config config = ConfigProvider.getConfig();
         Integer port = config.getValue("camel.grpc.test.tls.server.port", Integer.class);
@@ -279,7 +279,7 @@ class GrpcTest {
                 .body(is(message + " " + GRPC_TEST_PONG_VALUE));
     }
 
-    @Test
+    @Disabled("https://github.com/apache/camel-quarkus/issues/3947")
     public void jwtConsumer() throws Exception {
         Config config = ConfigProvider.getConfig();
         Integer port = config.getValue("camel.grpc.test.jwt.server.port", Integer.class);
